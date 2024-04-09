@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.postimg.cc/fLwz1yk4/like-15171547-removebg-preview.png",
+        "title": "In Home Support",
+        "description": "In-home support: Medical assistance tailored to your needs, provided within the comfort of your home."
+    },
+    {
+        "id": 1,
+        "image": "https://i.postimg.cc/j5XHrDXy/examination-2869812-removebg-preview.png",
+        "title": "Carrers to Client",
+        "description": "Connecting healthcare professionals with clients seeking quality care and assistance "
+    },
+    {
+        "id": 1,
+        "image": "https://i.postimg.cc/bYVnHcFY/nurse-2719553-removebg-preview.png",
+        "title": "Nursing Care",
+        "description": "Professional nursing care: Compassionate support tailored to individual needs, ensuring optimal health outcomes"
+    },
+    {
+        "id": 1,
+        "image": "https://i.postimg.cc/s231Cw00/icons8-heart-health-80-removebg-preview.png",
+        "title": "Healthcare Guarantee",
+        "description": "Assurance of quality healthcare services, prioritizing patient well-being and satisfaction, backed by expertise."
+    }
+]
