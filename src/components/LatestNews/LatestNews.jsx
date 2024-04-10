@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import News from "./News/News";
 
-
 const LatestNews = () => {
     const [newses, setNewses] = useState([])
 

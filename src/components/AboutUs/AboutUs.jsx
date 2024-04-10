@@ -1,5 +1,14 @@
 import { MdOutlineDoubleArrow } from "react-icons/md";
 
+// core version + navigation, pagination modules:
+// import Swiper from 'swiper';
+import {Swiper,  SwiperSlide } from 'swiper/react';
+
+import { Pagination } from 'swiper/modules';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const AboutUs = () => {
     return (
@@ -22,12 +31,32 @@ const AboutUs = () => {
             </div>
             <hr className="border-t-[2px] mt-32 mb-14 mx-7"/>
             <div className="flex justify-around">
-                <img src="https://i.postimg.cc/fRcJQXzy/client-logo2.webp" alt="#" />
-                <img src="https://i.postimg.cc/9FtrvZFM/client-logo3.webp" alt="#" />
-                <img src="https://i.postimg.cc/SRLxbb45/client-logo4.webp" alt="#" />
-                <img src="https://i.postimg.cc/KvZZ3VxG/client-logo5.webp" alt="#" />
-                <img src="https://i.postimg.cc/13bhBYhN/client-logo6.webp" alt="#" />
             </div>
+            <Swiper
+            modules={[Pagination]}
+            spaceBetween={30}
+            slidesPerView={5} 
+            className="mySwiper"
+                >
+                <SwiperSlide>
+                    <img src="https://i.postimg.cc/fRcJQXzy/client-logo2.webp" alt="#" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://i.postimg.cc/9FtrvZFM/client-logo3.webp" alt="#" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://i.postimg.cc/SRLxbb45/client-logo4.webp" alt="#" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://i.postimg.cc/KvZZ3VxG/client-logo5.webp" alt="#" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://i.postimg.cc/13bhBYhN/client-logo6.webp" alt="#" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://i.postimg.cc/KzhgbnyJ/client-logo1.webp" alt="#" />
+                </SwiperSlide>
+            </Swiper>
         </div>
     );
 };
