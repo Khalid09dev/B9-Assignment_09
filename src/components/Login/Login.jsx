@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import {  signInWithEmailAndPassword  } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup  } from "firebase/auth";
 import auth from '../../firebase/firebase.init'
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
+import { AuthContext } from "../../providers/AuthProvider";
+
+
 
 const Login = () => {
+    const {loginUser} = useContext(AuthContext)
+
     const handleLoginForm = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -22,12 +28,41 @@ const Login = () => {
             return;
         }
 
-        signInWithEmailAndPassword(auth, email, password)
+        //user sign in with password
+        loginUser(email, password)
         .then((result) => {
             console.log(result.user);
             toast.success('Login Successfull');
         })
         .catch((error) => {
+            toast.error(error.message);
+        })
+    }
+
+    // sign in with google 
+    const signInGoogle = () => {
+        const provider = new GoogleAuthProvider()
+        signInWithPopup(auth, provider)
+        .then((result) => {
+            console.log(result.user)
+            toast.success('Login Successfull');
+        })
+        .catch((error) => {
+            console.log(error.message);
+            toast.error(error.message);
+        })
+    }
+
+    // sign in with github 
+    const signInGithub = () => {
+        const provider = new GithubAuthProvider()
+        signInWithPopup(auth, provider)
+        .then((result) => {
+            console.log(result.user);
+            toast.success('Login Successfull');
+        })
+        .catch((error) => {
+            console.log(error.message);
             toast.error(error.message);
         })
     }
@@ -49,6 +84,9 @@ const Login = () => {
     }
     return (
         <div className="flex max-h-screen justify-center items-center text-center ">
+            <Helmet>
+                <title>Zavar - Login Page</title>
+            </Helmet>
             <div className="hero min-h-screen bg-gray-100">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -75,11 +113,11 @@ const Login = () => {
                 </form>
                 <p className="bg-[#FFFFFF] text-[20px] text-[#171717] outfit font-medium select-none">Or</p>
                 <div className="flex justify-center gap-3 pb-2 bg-white text-[#171717] outfit font-medium select-none">
-                    <div className="flex items-center bg-[#FFFFFF]">
-                        <div className="bg-gray-300 gap-1 p-2 flex items-center rounded-lg"><FaGoogle />Sign In With Google</div>
+                    <div onClick={signInGoogle} className="flex items-center bg-[#FFFFFF]">
+                        <Link href="" className="bg-gray-300 gap-1 p-2 flex items-center rounded-lg"><FaGoogle />Sign In With Google</Link>
                     </div>
-                    <div className="flex items-center bg-[#FFFFFF]">
-                        <div className="bg-gray-300 flex p-2 gap-1 items-center rounded-lg"><FaGithub />Sign In With Github</div>
+                    <div onClick={signInGithub} className="flex items-center bg-[#FFFFFF]">
+                        <Link className="bg-gray-300 flex p-2 gap-1 items-center rounded-lg"><FaGithub />Sign In With Github</Link>
                     </div>
                 </div>
                 <h1 className="bg-[#FFFFFF] pb-2 text-[#171717] outfit text-[19px] rounded-b-[14px] select-none">If you new here, go <Link className="text-blue-400 underline decoration-[2px]" to="/register">Register</Link></h1>

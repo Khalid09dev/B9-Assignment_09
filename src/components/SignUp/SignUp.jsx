@@ -1,19 +1,24 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
+// import auth from "../../firebase/firebase.init";
 import { Link } from "react-router-dom";
-import auth from "../../firebase/firebase.init";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import { Helmet } from 'react-helmet';
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const SignUp = () => {
+    const {createUser} = useContext(AuthContext);
+
     const handleRegisterForm = (e) => {
         e.preventDefault();
+        const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+        console.log(name, email, password);
 
         //password validation
         if(!/(?=.*[a-z])(?=.*[A-Z]).{6}$/.test(password)) {
@@ -22,8 +27,8 @@ const SignUp = () => {
         }
         
 
-        // use create
-        createUserWithEmailAndPassword(auth, email, password)
+        // user create
+        createUser(email, password)
         .then((result) => {
             console.log(result.user);
             toast.success('Registration Successfull', {autoClose: 5000});
@@ -52,6 +57,9 @@ const SignUp = () => {
     }
     return (
         <div className="flex max-h-screen justify-center items-center text-center">
+            <Helmet>
+                <title>Zavar - Registration Page</title>
+            </Helmet>
             <div className="hero min-h-screen bg-gray-100">
             <div className="hero-content flex-col gap-10 lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
@@ -91,8 +99,8 @@ const SignUp = () => {
                     </div>
                     <div className="form-control mt-4">
                     <button className="btn btn-primary text-[20px] text-[#FFFFFF]">Register</button>
-                    </div>
                     <ToastContainer></ToastContainer>
+                    </div>
                 </form>
                 <h1 className="bg-[#FFFFFF] pb-2 text-[#171717] outfit text-[19px] rounded-b-[14px] select-none">Already have registered, go <Link className="text-blue-400 underline decoration-[2px]" to="/login">Login</Link></h1>
                 </div>

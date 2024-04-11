@@ -1,6 +1,26 @@
+import { useContext } from 'react';
 import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import { AuthContext } from '../../providers/AuthProvider';
+import { FaRegCircleUser } from "react-icons/fa6";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Navbar = () => {
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+        .then((result) => {
+            console.log(result.user)
+            toast.success('Successfully Logged Out');
+        })
+        .catch((error) => {
+            toast.error(error.message)
+        })
+    }
+
     return (
         <div className="flex justify-around items-center relative py-8 z-10">
             <img className="h-[36px] w-[150px]" src="https://i.postimg.cc/bwpCmJFp/logo.png" alt="Logo" />
@@ -20,18 +40,35 @@ const Navbar = () => {
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="absolute mt-1 inline-block">
-                        <img className="w-14 h-14 rounded-full " alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        {
+                            user ? <img id='avatar' className="w-14 h-14 rounded-full"  src={user.photoURL} alt='avatar'/> : <FaRegCircleUser className="w-12 h-12 rounded-full"/>
+                        }
                         </div>
                     </div>
-                    <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 ">
+                    <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-72 ">
                         <li>
                         <a className="justify-between">
-                            Profile
-                            <span className="badge">New</span>
+                            Name:
+                            <span className="badge flex">{user.displayName}</span>
                         </a>
                         </li>
-                        <li><a>Settings</a></li>
-                        <li><NavLink to="/login">Login</NavLink></li>
+                        <li>
+                        <a className="justify-between">
+                            Email:
+                            <span className="badge flex">{user.email}</span>
+                        </a>
+                        </li>
+                        <li>
+                        <a className="justify-between">
+                            EmailVerified:
+                            <span className="badge flex">{user.emailVerified === true ? 'true' : 'false'}</span>
+                        </a>
+                        </li>
+                        {user ?
+                            <li><Link onClick={handleLogOut} to="/">LogOut</Link></li> :
+                            <li><NavLink to="/login">Login</NavLink></li> 
+                        }
+                        <ToastContainer></ToastContainer>
                     </ul>
                     </div>
                 </div>
