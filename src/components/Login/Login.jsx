@@ -24,7 +24,7 @@ const Login = () => {
         console.log(email, password);
 
         //password validation
-        if(!/(?=.*[a-z])(?=.*[A-Z]).{6}$/.test(password)) {
+        if(!/(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
             toast.error('Your password have one Uppercase and Lowercase letter and length have to be (min) six digit.', {autoClose: 5000});
             return;
         }

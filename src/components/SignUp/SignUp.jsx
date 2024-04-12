@@ -22,7 +22,7 @@ const SignUp = () => {
         console.log(name, email, password);
 
         //password validation
-        if(!/(?=.*[a-z])(?=.*[A-Z]).{6}$/.test(password)) {
+        if(!/(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
             toast.error('Your password have one Uppercase and Lowercase letter and length have to be (min) six digit.', {autoClose: 5000});
             return;
         }
@@ -33,12 +33,10 @@ const SignUp = () => {
         .then((result) => {
             console.log(result.user);
             toast.success('Registration Successfull', {autoClose: 5000});
-            navigate('/login');
-            return 
+            navigate('/register');
         })
         .catch((error) => {
             toast.warn(error.message, {autoClose: 5000});
-            return;
         })
     }
 

@@ -32,7 +32,7 @@ const Navbar = () => {
                     <li className="hover:text-[#FBA968] duration-150"><a href="#">SERVICES</a></li>
                     <li className="hover:text-[#FBA968] duration-150"><a href="#">PROJECT</a></li>
                     <li className="hover:text-[#FBA968] duration-150"><a href="#">BLOG</a></li>
-                    <li className="hover:text-[#FBA968] duration-150"><a href="#">CONTACT US</a></li>
+                    <li className="hover:text-[#FBA968] duration-150"><NavLink to="/contactus">CONTACT US</NavLink></li>
                 </ul>
             </div>
             <div className="flex items-center gap-3">
@@ -69,7 +69,7 @@ const Navbar = () => {
                         </li>
                         <Link to="/editprofile"><li>
                         <a className="justify-between">
-                            Edit Profile:
+                            Edit Profile
                             <span className="badge flex"></span>
                         </a>
                         </li></Link>

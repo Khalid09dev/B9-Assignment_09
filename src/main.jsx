@@ -14,6 +14,7 @@ import AuthProvider from './providers/AuthProvider.jsx'
 import EstateDetails from './components/EstateDetails/EstateDetails.jsx'
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import EditProfile from './components/EditProfile/EditProfile.jsx'
+import ContactUs from './components/ContactUs/ContactUs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <SignUp></SignUp>
+      },
+      {
+        path: 'contactus',
+        element: <ContactUs></ContactUs>
       },
       {
         path: '/editprofile',
