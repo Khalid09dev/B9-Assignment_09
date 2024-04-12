@@ -10,11 +10,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
 import { AuthContext } from "../../providers/AuthProvider";
-
+import {useNavigate} from 'react-router-dom';
 
 
 const Login = () => {
     const {loginUser} = useContext(AuthContext)
+    const navigate = useNavigate();
 
     const handleLoginForm = (e) => {
         e.preventDefault();
@@ -33,6 +34,7 @@ const Login = () => {
         .then((result) => {
             console.log(result.user);
             toast.success('Login Successfull');
+            navigate('/')
         })
         .catch((error) => {
             toast.error(error.message);
@@ -46,6 +48,7 @@ const Login = () => {
         .then((result) => {
             console.log(result.user)
             toast.success('Login Successfull');
+            navigate('/')
         })
         .catch((error) => {
             console.log(error.message);
@@ -60,6 +63,7 @@ const Login = () => {
         .then((result) => {
             console.log(result.user);
             toast.success('Login Successfull');
+            navigate('/')
         })
         .catch((error) => {
             console.log(error.message);

@@ -8,10 +8,11 @@ import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { Helmet } from 'react-helmet';
 import { AuthContext } from "../../providers/AuthProvider";
-
+import {useNavigate} from 'react-router-dom';
 
 const SignUp = () => {
     const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleRegisterForm = (e) => {
         e.preventDefault();
@@ -32,7 +33,8 @@ const SignUp = () => {
         .then((result) => {
             console.log(result.user);
             toast.success('Registration Successfull', {autoClose: 5000});
-            return;
+            navigate('/login');
+            return 
         })
         .catch((error) => {
             toast.warn(error.message, {autoClose: 5000});
