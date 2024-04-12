@@ -31,7 +31,7 @@ const Navbar = () => {
                     <li className="hover:text-[#FBA968] duration-150"><a href="#">PAGES</a></li>
                     <li className="hover:text-[#FBA968] duration-150"><a href="#">SERVICES</a></li>
                     <li className="hover:text-[#FBA968] duration-150"><a href="#">PROJECT</a></li>
-                    <li className="hover:text-[#FBA968] duration-150"><a href="#">BLOG</a></li>
+                    <li className="hover:text-[#FBA968] duration-150"><Link to="/blogs">BLOG</Link></li>
                     <li className="hover:text-[#FBA968] duration-150"><NavLink to="/contactus">CONTACT US</NavLink></li>
                 </ul>
             </div>

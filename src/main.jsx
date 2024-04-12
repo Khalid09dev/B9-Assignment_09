@@ -15,6 +15,7 @@ import EstateDetails from './components/EstateDetails/EstateDetails.jsx'
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import EditProfile from './components/EditProfile/EditProfile.jsx'
 import ContactUs from './components/ContactUs/ContactUs.jsx';
+import Blogs from './components/Blogs/Blogs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,8 +36,12 @@ const router = createBrowserRouter([
         element: <SignUp></SignUp>
       },
       {
-        path: 'contactus',
+        path: '/contactus',
         element: <ContactUs></ContactUs>
+      },
+      {
+        path: '/blogs',
+        element: <Blogs></Blogs>
       },
       {
         path: '/editprofile',
