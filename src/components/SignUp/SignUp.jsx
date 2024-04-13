@@ -72,7 +72,7 @@ const SignUp = () => {
                     <label className="label">
                         <span className="label-text text-[20px] font-medium text-[#171717]">Name</span>
                     </label>
-                    <input type="text" placeholder="Your Name" name="name" className="input input-bordered bg-gray-100 placeholder:text-[16px] outfit" required />
+                    <input type="text" placeholder="Your Name" name="name" className="input input-bordered bg-gray-100 placeholder:text-[16px] outfit" />
                     </div>
                     <div className="form-control">
                     <label className="label">
@@ -84,7 +84,7 @@ const SignUp = () => {
                     <label className="label">
                         <span className="label-text text-[20px] text-[#171717] font-medium">Photo URL</span>
                     </label>
-                    <input type="url" placeholder="Photo URL" name="photoURL" className="input input-bordered bg-gray-100 placeholder:text-[16px] outfit"  required />
+                    <input type="url" placeholder="Photo URL" name="photoURL" className="input input-bordered bg-gray-100 placeholder:text-[16px] outfit" />
                     </div>
                     <div className="form-control relative">
                     <label className="label">

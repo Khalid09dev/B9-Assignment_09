@@ -28,9 +28,8 @@ const Navbar = () => {
             <div>
                 <ul className="flex items-center gap-11 text-[#171717] text-[17px] font-medium leading-3">
                     <li className="text-[#FBA968]"><NavLink to="/">HOME</NavLink></li>
-                    <li className="hover:text-[#FBA968] duration-150"><a href="#">PAGES</a></li>
                     <li className="hover:text-[#FBA968] duration-150"><a href="#">SERVICES</a></li>
-                    <li className="hover:text-[#FBA968] duration-150"><a href="#">PROJECT</a></li>
+                    <li className="hover:text-[#FBA968] duration-150"><Link to="/project">PROJECT</Link></li>
                     <li className="hover:text-[#FBA968] duration-150"><Link to="/blogs">BLOG</Link></li>
                     <li className="hover:text-[#FBA968] duration-150"><NavLink to="/contactus">CONTACT US</NavLink></li>
                 </ul>
@@ -41,7 +40,7 @@ const Navbar = () => {
                 <div className="dropdown dropdown-end">
                 <ToastContainer></ToastContainer>
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="absolute mt-1 inline-block">
+                        <div className=" absolute mt-1 inline-block">
                         {
                             user ? <img id='avatar' className="w-14 h-14 rounded-full"  src={user.photoURL} alt='avatar'/> : <FaRegCircleUser className="w-12 h-12 rounded-full"/>
                         }
@@ -101,6 +100,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };

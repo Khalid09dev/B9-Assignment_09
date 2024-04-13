@@ -3,36 +3,48 @@
         "id": 1,
         "image": "https://i.postimg.cc/qv5bhVmr/blog-img1-800x600.webp",
         "date": "AUG 12 2023 - MEDICAL",
-        "title": "Increased social and community participaiton"
+        "title": "Increased social and community participaiton",
+        "project_title": "Medical Camps",
+        "project_category": "OLD CARE"
     },
     {
         "id": 2,
         "image": "https://i.postimg.cc/ncQCbq61/blog-img2-800x600.webp",
         "date": "MAY 12 2022 - OLD CARE",
-        "title": "Assistive for personal care and safety"
+        "title": "Assistive for personal care and safety",
+        "project_title": "NDIS Management",
+        "project_category": "MEDICAL"
     },
     {
         "id": 3,
         "image": "https://i.postimg.cc/HW8ydGM5/blog-img3-800x600.webp",
         "date": "JAN 10 2020 - NDIS HEALTH",
-        "title": "Development daily living and life skills"
+        "title": "Development daily living and life skills",
+        "project_title": "Disablities Schemes",
+        "project_category": "DISABILITY"
     },
     {
         "id": 4,
         "image": "https://i.postimg.cc/GmX2vzYd/blog-img4-800x600.webp",
         "date": "SEP 22 2021 - HEALTHCARE",
-        "title": "Group and Centre-based activities"
+        "title": "Group and Centre-based activities",
+        "project_title": "Physical Activities",
+        "project_category": "MEDICAL"
     },
     {
         "id": 5,
         "image": "https://i.postimg.cc/8cCDkgKv/blog-img5-800x600.webp",
         "date": "APR 13 2020 - OLD CARE",
-        "title": "AAPD Internship Program Evaluation"
+        "title": "AAPD Internship Program Evaluation",
+        "project_title": "Therapeutic Supports",
+        "project_category": "HEALTH"
     },
     {
         "id": 6,
         "image": "https://i.postimg.cc/LsSc6Mhs/blog-img6-800x600.webp",
         "date": "NOV 19 2020 - DISABILITY",
-        "title": "Assistance with daily personal activities"
+        "title": "Assistance with daily personal activities",
+        "project_title": "Senior Health Care",
+        "project_category": "HEALTH CARE" 
     }
 ]
