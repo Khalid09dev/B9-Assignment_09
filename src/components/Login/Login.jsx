@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup  } from "firebase/auth";
@@ -6,11 +6,9 @@ import auth from '../../firebase/firebase.init'
 import { useContext, useState } from "react";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import { Helmet } from 'react-helmet';
 import { AuthContext } from "../../providers/AuthProvider";
-import {useNavigate} from 'react-router-dom';
 
 
 const Login = () => {
@@ -33,12 +31,12 @@ const Login = () => {
         loginUser(email, password)
         .then((result) => {
             console.log(result.user);
-            toast.success('Login Successfull');
-            navigate('/')
+            toast.success('Login Successfull',);
+            navigate('/');
         })
         .catch((error) => {
-            toast.error(error.message);
-        })
+            toast.error(error.message); 
+        }) 
     }
 
     // sign in with google 
@@ -48,7 +46,7 @@ const Login = () => {
         .then((result) => {
             console.log(result.user)
             toast.success('Login Successfull');
-            navigate('/')
+            navigate('/');
         })
         .catch((error) => {
             console.log(error.message);
@@ -58,6 +56,7 @@ const Login = () => {
 
     // sign in with github 
     const signInGithub = () => {
+
         const provider = new GithubAuthProvider()
         signInWithPopup(auth, provider)
         .then((result) => {
@@ -126,7 +125,6 @@ const Login = () => {
                 </div>
                 <h1 className="bg-[#FFFFFF] pb-2 text-[#171717] outfit text-[19px] rounded-b-[14px] select-none">If you new here, go <Link className="text-blue-400 underline decoration-[2px]" to="/register">Register</Link></h1>
                 </div>
-                <ToastContainer></ToastContainer>
                 <div className="text-center lg:text-left select-none">
                 <h1 className="text-5xl font-bold text-[#171717]">Login now!</h1>
                 <p className="py-6 text-[#171717] font-medium text-[20px]">Access your medical records and services securely.</p>

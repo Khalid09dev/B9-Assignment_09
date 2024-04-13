@@ -1,8 +1,7 @@
 // import { createUserWithEmailAndPassword } from "firebase/auth";
 // import auth from "../../firebase/firebase.init";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import { useContext, useState } from "react";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
@@ -10,8 +9,9 @@ import { Helmet } from 'react-helmet';
 import { AuthContext } from "../../providers/AuthProvider";
 import {useNavigate} from 'react-router-dom';
 
+
 const SignUp = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser, logOut} = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleRegisterForm = (e) => {
@@ -32,8 +32,14 @@ const SignUp = () => {
         createUser(email, password)
         .then((result) => {
             console.log(result.user);
-            toast.success('Registration Successfull', {autoClose: 5000});
-            navigate('/register');
+            toast.success('Successfully registered', {autoClose: 5000});
+            logOut()
+            .then(() => {
+                navigate('/login');
+            })
+            .then((error) => {
+                console.log(error.message);
+            })
         })
         .catch((error) => {
             toast.warn(error.message, {autoClose: 5000});
@@ -72,7 +78,7 @@ const SignUp = () => {
                     <label className="label">
                         <span className="label-text text-[20px] font-medium text-[#171717]">Name</span>
                     </label>
-                    <input type="text" placeholder="Your Name" name="name" className="input input-bordered bg-gray-100 placeholder:text-[16px] outfit" />
+                    <input name="name" type="text" placeholder="Your Name"  className="input input-bordered bg-gray-100 placeholder:text-[16px] outfit" />
                     </div>
                     <div className="form-control">
                     <label className="label">
@@ -84,7 +90,7 @@ const SignUp = () => {
                     <label className="label">
                         <span className="label-text text-[20px] text-[#171717] font-medium">Photo URL</span>
                     </label>
-                    <input type="url" placeholder="Photo URL" name="photoURL" className="input input-bordered bg-gray-100 placeholder:text-[16px] outfit" />
+                    <input name="photoURL" type="url" placeholder="Photo URL"  className="input input-bordered bg-gray-100 placeholder:text-[16px] outfit" />
                     </div>
                     <div className="form-control relative">
                     <label className="label">
@@ -99,7 +105,6 @@ const SignUp = () => {
                     </div>
                     <div className="form-control mt-4">
                     <button className="btn btn-primary text-[20px] text-[#FFFFFF]">Register</button>
-                    <ToastContainer></ToastContainer>
                     </div>
                 </form>
                 <h1 className="bg-[#FFFFFF] pb-2 text-[#171717] outfit text-[19px] rounded-b-[14px] select-none">Already have registered, go <Link className="text-blue-400 underline decoration-[2px]" to="/login">Login</Link></h1>

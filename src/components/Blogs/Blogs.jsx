@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";
+import {Helmet} from 'react-helmet';
+
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -12,6 +14,9 @@ const Blogs = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Zavar - Blogs</title>
+            </Helmet>
             <div className="mx-20 flex justify-center relative">
                 <img  className="w-[1300px] border h-[470px] rounded-[70px]" src="https://i.postimg.cc/CKdkjR1Q/resize-1712918627986206288banner.jpg" alt="#" />
                 <div className="absolute top-40">

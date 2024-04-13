@@ -3,8 +3,7 @@ import {NavLink} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaRegCircleUser } from "react-icons/fa6";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
 
 const Navbar = () => {
@@ -14,7 +13,7 @@ const Navbar = () => {
     const handleLogOut = () => {
         logOut()
         .then(() => {
-            console.log('log out successfull');
+            toast.success('log out successfull')
             navigate('/');
         })
         .catch((error) => {
@@ -28,9 +27,9 @@ const Navbar = () => {
             <div>
                 <ul className="flex items-center gap-11 text-[#171717] text-[17px] font-medium leading-3">
                     <li className="text-[#FBA968]"><NavLink to="/">HOME</NavLink></li>
-                    <li className="hover:text-[#FBA968] duration-150"><a href="#">SERVICES</a></li>
-                    <li className="hover:text-[#FBA968] duration-150"><Link to="/project">PROJECT</Link></li>
-                    <li className="hover:text-[#FBA968] duration-150"><Link to="/blogs">BLOG</Link></li>
+                    <li className="hover:text-[#FBA968] duration-150"><NavLink to="/leaflet">SERVICES</NavLink></li>
+                    <li className="hover:text-[#FBA968] duration-150"><NavLink to="/project">PROJECT</NavLink></li>
+                    <li className="hover:text-[#FBA968] duration-150"><NavLink to="/blogs">BLOG</NavLink></li>
                     <li className="hover:text-[#FBA968] duration-150"><NavLink to="/contactus">CONTACT US</NavLink></li>
                 </ul>
             </div>
@@ -38,7 +37,6 @@ const Navbar = () => {
                 <button className="text-[#171717] text-base py-4 px-7 bg-[#FFFFFF] font-medium rounded-full hover:bg-[#171717] hover:text-white hover:duration-500">APPOINTMENT</button>
                 <div className="">
                 <div className="dropdown dropdown-end">
-                <ToastContainer></ToastContainer>
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className=" absolute mt-1 inline-block">
                         {
@@ -86,9 +84,7 @@ const Navbar = () => {
                         </li>
                         
                         <li>
-                        <a className="justify-between">
                             <NavLink to="/register">Register</NavLink>
-                        </a>
                         </li>
                         
                         {user ?

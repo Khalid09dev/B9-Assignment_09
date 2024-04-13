@@ -17,6 +17,7 @@ import EditProfile from './components/EditProfile/EditProfile.jsx'
 import ContactUs from './components/ContactUs/ContactUs.jsx';
 import Blogs from './components/Blogs/Blogs.jsx';
 import Projects from './components/Projects/Projects.jsx';
+import Leaflet from './components/Leaflet/Leaflet.jsx';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         path: '/estate/:id',
         element: <PrivateRoute><EstateDetails></EstateDetails></PrivateRoute>,
         loader: () => fetch('EstateDetails.json')
+      },
+      {
+        path: '/leaflet',
+        element: <Leaflet></Leaflet>
       }
     ]
   },

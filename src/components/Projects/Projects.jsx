@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Project from "../Project/Project";
+import {Helmet} from 'react-helmet';
+
 
 const Projects = () => {
     const [blogs, setBlogs] = useState([]) 
@@ -10,7 +12,11 @@ const Projects = () => {
         .then(data => setBlogs(data))
     },[])
     return (
+        
         <div>
+            <Helmet>
+                <title>Zavar - Our Project</title>
+            </Helmet>
             <div className="mx-20 flex justify-center relative">
                 <img  className="w-[1300px] border h-[470px] rounded-[70px]" src="https://i.postimg.cc/CKdkjR1Q/resize-1712918627986206288banner.jpg" alt="#" />
                 <div className="absolute top-40">

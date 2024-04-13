@@ -2,12 +2,18 @@ import { FiPhoneCall } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaRegClock } from "react-icons/fa";
+import {Helmet} from 'react-helmet';
+import Leaflet from "../Leaflet/Leaflet";
+
 // import DraggableMarker from "../DraggableMarker/DraggableMarker";
 
 
 const ContactUs = () => {
     return (
         <div>
+            <Helmet>
+                <title>Zavar - Contact Us</title>
+            </Helmet>
             <div className="mx-20 flex justify-center relative">
                 <img  className="w-[1300px] border h-[470px] rounded-[70px]" src="https://i.postimg.cc/CKdkjR1Q/resize-1712918627986206288banner.jpg" alt="#" />
                 <div className="absolute top-40">
@@ -94,10 +100,10 @@ const ContactUs = () => {
                     </div>
                 </div>
 
-                <div className="flex justify-center items-center bg-no-repeat">
+                <div className="flex justify-center items-center pt-20">
                     <img src="https://i.postimg.cc/g0R6C4sv/contact-us-img.webp" alt="#" />
                     <div>
-                        {/* <DraggableMarker></DraggableMarker> */}
+                        <Leaflet></Leaflet>
                     </div>
                 </div>
             </div>

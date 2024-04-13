@@ -1,10 +1,15 @@
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import {Link} from 'react-router-dom'
+import {Helmet} from 'react-helmet';
+
 
 const ErrorPage = () => {
     return (
         <div className="bg-gray-100">
+            <Helmet>
+                <title>Zavar - Error Page</title>
+            </Helmet>
             <Navbar></Navbar>
             <div className="flex max-h-screen justify-center items-center text-center">
                 <div>
