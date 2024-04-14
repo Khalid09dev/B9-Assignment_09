@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="flex justify-around items-center relative py-8 z-10">
             <img className="h-[36px] w-[150px]" src="https://i.postimg.cc/bwpCmJFp/logo.png" alt="Logo" />
             <div>
-                <ul className="flex items-center gap-11 text-[#171717] text-[17px] font-medium leading-3">
+                <ul className="grid  md:flex items-center gap-11 text-[#171717] text-[17px] font-medium leading-3">
                     <li className="text-[#FBA968]"><NavLink to="/">HOME</NavLink></li>
                     <li className="hover:text-[#FBA968] duration-150"><NavLink to="/leaflet">SERVICES</NavLink></li>
                     <li className="hover:text-[#FBA968] duration-150"><NavLink to="/project">PROJECT</NavLink></li>
@@ -64,9 +64,9 @@ const Navbar = () => {
                             <span className="badge flex">{user && user.emailVerified === true ? 'true' : 'false'}</span>
                         </a>
                         </li>
-                        <Link to="/editprofile"><li>
+                        <Link to="/updateprofile"><li>
                         <a className="justify-between">
-                            Edit Profile
+                            Update Profile
                             <span className="badge flex"></span>
                         </a>
                         </li></Link>

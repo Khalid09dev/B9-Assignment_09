@@ -50,13 +50,13 @@ const router = createBrowserRouter([
         element: <PrivateRoute><Projects></Projects></PrivateRoute>
       },
       {
-        path: '/editprofile',
+        path: '/updateprofile',
         element: <PrivateRoute><EditProfile></EditProfile></PrivateRoute>,
       },
       {
         path: '/estate/:id',
         element: <PrivateRoute><EstateDetails></EstateDetails></PrivateRoute>,
-        loader: () => fetch('EstateDetails.json')
+        loader: () => fetch('EstateDetail.json')
       },
       {
         path: '/leaflet',

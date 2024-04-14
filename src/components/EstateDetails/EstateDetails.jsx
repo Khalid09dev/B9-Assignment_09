@@ -2,15 +2,19 @@ import {useLoaderData, useParams, Link} from 'react-router-dom';
 
 const EstateDetails = () => {
     const estates = useLoaderData();
+    console.log(estates)
     const {id} = useParams();
     console.log(id, estates)
     const toIntId = parseInt(id);
     const estate = estates.find(estate => estate.id === toIntId);
-    
+    // console.log(estate)
     const { image, title, description, category, location, duration, availability, cost, contact} = estate;
 
     return (
         <div className='flex mx-32 max-h-screen justify-center items-center'>
+            {
+                
+            }
             <div className='flex items-center gap-5 border-0 p-10 bg-white rounded-3xl'>
                 <div className='w-1/2'>
                     <img className="w-[70px] h-[70px] mb-12" src={image} alt="#" />

@@ -14,11 +14,11 @@ const Footer = () => {
                         <img className="h-[36px] w-[150px] text-white mb-7" src="https://i.postimg.cc/XJRcgNCT/footer-logo.png" alt="#" />
                         <p className="text-[#A7A7A7] text-[17px] outfit font-medium pb-5">Quick access to contact info, terms, privacy policy, <br /> and social links for our medical website</p>
                     </div>
-                    <div>
+                    <div className="mr-5 sm:mr-0">
                         <h4 className="text-[26px] anek font-medium text-[#FFFFFF]">Our Newsletter</h4>
                         <div className="relative">
-                            <input className="py-4 pr-[10px] pl-4 w-[601px] bg-[#171717]  border-[#A7A7A7] border-[1px] rounded-full placeholder:text-[#A7A7A7] placeholder:font-medium placeholder:text-[18px]" type="email" placeholder="Enter you email..." required/>
-                            <FaTelegram className="absolute left-[550px] bottom-2.5 w-[41px] h-[41px] duration-150 text-[#FBA968] hover:text-white"/>
+                            <input className="py-4 pr-[10px] pl-4 w-60 md:w-[601px] bg-[#171717]  border-[#A7A7A7] border-[1px] rounded-full placeholder:text-[#A7A7A7] placeholder:font-medium placeholder:text-[18px]" type="email" placeholder="Enter you email..." required/>
+                            <FaTelegram className="absolute left-48 md:left-[550px] bottom-2.5 w-[41px] h-[41px] duration-150 text-[#FBA968] hover:text-white"/>
                         </div>
                     </div>
                 </div>

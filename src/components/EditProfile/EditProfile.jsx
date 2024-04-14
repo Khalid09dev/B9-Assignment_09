@@ -1,4 +1,4 @@
-import { updateEmail, updateProfile } from "firebase/auth";
+import { EmailAuthProvider, reauthenticateWithCredential, updateEmail, updateProfile } from "firebase/auth";
 import { useForm } from "react-hook-form";
 import auth from "../../firebase/firebase.init";
 import { useContext } from "react";
@@ -21,24 +21,33 @@ const EditProfile = () => {
             <div className="hero-content gap-14 flex-col lg:flex-row-reverse ">
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <form onSubmit={handleSubmit((data) => {
-                console.log(data)
+                // console.log(data)
+
+                //update profile
                 updateProfile(auth.currentUser, {
                     displayName: data.displayName, 
                     email: data.email,
                     photoURL: data.photoURL
                 })
-
-
-                //email update
-                updateEmail(auth.currentUser, data.email)
-                .then((result) => {
-                    console.log(result.user)
+                .then(() => {
+                    toast.success('reload page for watching updated data', {autoClose: 5000})
                 })
                 .catch((error) => {
-                    console.log(error.message);
-                    toast.warning(error.message, {autoClose: 5000})
+                    toast.error(error.message);
                 })
-                toast.success('reload page for watching updated data', {autoClose: 5000})
+                
+                    //reauthenticate user
+                    const credential = EmailAuthProvider.credential(auth.currentUser.email)
+                    const result =  reauthenticateWithCredential(auth.currentUser, credential)
+    
+                    //update email
+                    updateEmail(auth.currentUser, data.email)
+                    .then(() => {
+                        console.log('email updated');
+                    })
+                    .catch((error) => {
+                        console.log(error.message);
+                    })
 
             })} className="card-body bg-[#FFFFFF] rounded-t-[14px] rounded-b-[14px] border-white">
                     <div className="form-control">

@@ -23,7 +23,7 @@ const ContactUs = () => {
             </div>
 
 
-            <div className="flex justify-center mt-36 gap-10">
+            <div className="grid md:flex justify-center mt-36 gap-10">
                 <div>
                     <p className="text-[#FBA968] outfit text-[14px] font-medium pb-4">CONTACT WITH US</p>
                     <h2 className="text-[50px] text-[#171717] font-semibold anek leading-[54px]">Contact <span>&#38;</span> hire us <br /> for NDIS Services!</h2>
@@ -80,20 +80,20 @@ const ContactUs = () => {
 
 
             <div className="bg-[#171717] rounded-3xl mx-10 mt-36">
-                <div className="flex justify-center gap-10 pt-24">
+                <div className="grid md:flex justify-center gap-10 pt-24">
                     <div>
                         <p className="text-[#FBA968] text-[14px] outfit font-medium pb-4">FILL THE FORM</p>
                         <h2 className="text-[50px] anek text-[#FFFFFF] font-semibold leading-[55px]">Would you like to <br /> discuss a Service?</h2>
                         <p className="text-[#FFFFFF] text-[17px] outfit pt-7">Interested in our services? Lets chat! Whether you have questions, <br /> need advice, or want to explore options, our team is here to <br /> support you. Schedule a discussion today.</p>
                     </div>
                     <div>
-                        <div className="flex gap-10 mb-5">
-                            <input className="py-4 rounded-xl pl-4 pr-32 placeholder:text-[#FFFFFF] border-gray-500 border-[2px] placeholder:font-medium placeholder:outfit]" placeholder="Full Name" type="text" />
-                            <input className="py-4 rounded-xl pl-4 pr-32 placeholder:text-[#FFFFFF] border-gray-500 border-[2px] placeholder:font-medium placeholder:outfit" placeholder="Email" type="email" />
+                        <div className="grid md:flex gap-10 mb-5">
+                            <input className="py-4 rounded-xl pl-4 pr-5 md:pr-32 placeholder:text-[#FFFFFF] border-gray-500 border-[2px] placeholder:font-medium placeholder:outfit]" placeholder="Full Name" type="text" />
+                            <input className="py-4 rounded-xl pl-4 pr-5 md:pr-32 placeholder:text-[#FFFFFF] border-gray-500 border-[2px] placeholder:font-medium placeholder:outfit" placeholder="Email" type="email" />
                         </div>
-                        <div className="flex gap-10 mb-5">
-                            <input className="py-4 rounded-xl pl-4 pr-32 placeholder:text-[#FFFFFF] border-gray-500 border-[2px] placeholder:font-medium placeholder:outfit" placeholder="Phone Number" type="number" />
-                            <input className="py-4 rounded-xl pl-4 pr-32 placeholder:text-[#FFFFFF] border-gray-500 border-[2px] placeholder:font-medium placeholder:outfit" placeholder="Website" type="text" />
+                        <div className="grid w-1/2  md:flex gap-10 mb-5">
+                            <input className="py-4 rounded-xl pl-4 md:pr-32 placeholder:text-[#FFFFFF] border-gray-500 border-[2px] placeholder:font-medium placeholder:outfit" placeholder="Phone Number" type="number" />
+                            <input className="py-4 rounded-xl pl-4 md:pr-32 placeholder:text-[#FFFFFF] border-gray-500 border-[2px] placeholder:font-medium placeholder:outfit" placeholder="Website" type="text" />
                         </div>
                         <textarea name="" placeholder="Subject" className="placeholder:pl-4 placeholder:pt-2 placeholder:outfit placeholder:text-[#FFFFFF] placeholder:text-[16px] placeholder:font-medium rounded-2xl mb-5" id="" cols="92" rows="6"></textarea> <br />
                         <button className="bg-[#FBA968] text-[#171717] py-4 px-8 outfit text-[16px] font-medium rounded-full">SEND MESSAGE</button>

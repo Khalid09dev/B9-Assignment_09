@@ -26,13 +26,7 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
     }
 
-    // const editProfile = () => {
-    //     setLoading(true);
-    //     return updateProfile(auth.currentUser, {
-    //         displayName:
-    //     })
-    // }
-
+    
     //observer for auth object
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
