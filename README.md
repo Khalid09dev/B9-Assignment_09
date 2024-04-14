@@ -1,6 +1,6 @@
 # Zavar
 
-**Live Site URL:** [Zavar](https://www.ai-insight.com)
+**Live Site URL:** (https://zavar-65cf6.web.app/)
 
 ## Features and Characteristics:
 
